@@ -19,7 +19,7 @@ class AssetEncryption(obfuscator_category.IEncryptionObfuscator):
             "{0}.{1}".format(__name__, self.__class__.__name__)
         )
         super().__init__()
-        self.encryption_secret = "This-key-need-to-be-32-character"
+        self.encryption_secret = "2cjNgoB0waZKBltkJqYa2Coak7cicUsG"
 
     def obfuscate(self, obfuscation_info: Obfuscation):
         self.logger.info('Running "{0}" obfuscator'.format(self.__class__.__name__))
@@ -122,10 +122,11 @@ class AssetEncryption(obfuscator_category.IEncryptionObfuscator):
 
                             # Encrypt the asset file (if not already encrypted).
                             if asset_file not in already_encrypted_files:
+                                print('encrypting assets')
                                 with open(asset_file, "rb") as original_asset_file:
                                     encrypted_content = AES.new(
                                         key=self.encryption_secret.encode(),
-                                        mode=AES.MODE_ECB,
+                                        mode=AES.MODE_OFB,
                                     ).encrypt(
                                         pad(original_asset_file.read(), AES.block_size)
                                     )

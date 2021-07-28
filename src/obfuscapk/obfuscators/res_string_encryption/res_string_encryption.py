@@ -23,7 +23,7 @@ class ResStringEncryption(obfuscator_category.IEncryptionObfuscator):
         )
         super().__init__()
 
-        self.encryption_secret = "This-key-need-to-be-32-character"
+        self.encryption_secret = "2cjNgoB0waZKBltkJqYa2Coak7cicUsG"
 
     def encrypt_string(self, string_to_encrypt: str) -> str:
         # This is needed to remove the escaping added by Python. For example, if we
@@ -42,7 +42,7 @@ class ResStringEncryption(obfuscator_category.IEncryptionObfuscator):
             count=128,
         )
         encrypted_string = hexlify(
-            AES.new(key=key, mode=AES.MODE_ECB).encrypt(
+            AES.new(key=self.encryption_secret.encode(), mode=AES.MODE_OFB).encrypt(
                 pad(string_to_encrypt.encode(errors="replace"), AES.block_size)
             )
         ).decode()

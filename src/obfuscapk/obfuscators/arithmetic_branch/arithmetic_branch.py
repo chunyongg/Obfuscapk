@@ -70,9 +70,9 @@ class ArithmeticBranch(obfuscator_category.ICodeObfuscator):
                                 tmp_label = util.get_random_string(16)
                                 out_file.write("\n\tconst v0, {0}\n".format(v0))
                                 out_file.write("\tconst v1, {0}\n".format(v1))
-                                out_file.write("\tadd-int v0, v0, v1\n")
-                                out_file.write("\trem-int v0, v0, v1\n")
-                                out_file.write("\tif-gtz v0, :{0}\n".format(tmp_label))
+                                out_file.write("\tadd-int v0, v0, v1\n") #v0 = v0 + v1
+                                out_file.write("\trem-int v0, v0, v1\n") #v0 = Remainder of v0 / v1
+                                out_file.write("\tif-gtz v0, :{0}\n".format(tmp_label)) 
                                 out_file.write("\tgoto/32 :{0}\n".format(end_label))
                                 out_file.write("\t:{0}\n".format(tmp_label))
                                 out_file.write("\t:{0}\n".format(start_label))

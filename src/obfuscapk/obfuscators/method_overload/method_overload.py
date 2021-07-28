@@ -74,9 +74,11 @@ class MethodOverload(obfuscator_category.ICodeObfuscator):
                     # Create lists with random parameters to be added to the method
                     # signature. Add 3 overloads for each method and for each overload
                     # use 4 random params.
+                    number_overloads = util.get_random_int(4, 7)
+                    number_params = util.get_random_int(2,5)
                     for params in util.get_random_list_permutations(
-                        random.sample(self.param_types, 4)
-                    )[:3]:
+                        random.sample(self.param_types, number_params)
+                    )[number_overloads]:
                         new_param = "".join(params)
                         # Update parameter list and add void return type.
                         overloaded_signature = line.replace(

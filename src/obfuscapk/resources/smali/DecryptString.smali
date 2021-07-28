@@ -27,13 +27,13 @@
 
     new-instance v1, Ljavax/crypto/spec/PBEKeySpec;
 
-    const-string v2, "This-key-need-to-be-32-character"
+    const-string v2, "2cjNgoB0waZKBltkJqYa2Coak7cicUsG"
 
     invoke-virtual {v2}, Ljava/lang/String;->toCharArray()[C
 
     move-result-object v2
 
-    const-string v3, "This-key-need-to-be-32-character"
+    const-string v3, "2cjNgoB0waZKBltkJqYa2Coak7cicUsG"
 
     invoke-virtual {v3}, Ljava/lang/String;->getBytes()[B
 
@@ -59,7 +59,7 @@
 
     invoke-direct {v1, v0, v2}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
-    const-string v0, "AES/ECB/PKCS5Padding"
+    const-string v0, "AES/OFB"
 
     invoke-static {v0}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 

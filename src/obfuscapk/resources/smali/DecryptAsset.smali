@@ -44,7 +44,7 @@
     :try_start_0
     new-instance v4, Ljavax/crypto/spec/SecretKeySpec;
 
-    const-string/jumbo v7, "This-key-need-to-be-32-character"
+    const-string/jumbo v7, "2cjNgoB0waZKBltkJqYa2Coak7cicUsG"
 
     invoke-virtual {v7}, Ljava/lang/String;->getBytes()[B
 
@@ -54,7 +54,7 @@
 
     invoke-direct {v4, v7, v8}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
-    const-string/jumbo v7, "AES/ECB/PKCS5PADDING"
+    const-string/jumbo v7, "AES/OFB"
 
     invoke-static {v7}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
@@ -131,7 +131,7 @@
     :try_start_0
     new-instance v4, Ljavax/crypto/spec/SecretKeySpec;
 
-    const-string/jumbo v7, "This-key-need-to-be-32-character"
+    const-string/jumbo v7, "2cjNgoB0waZKBltkJqYa2Coak7cicUsG"
 
     invoke-virtual {v7}, Ljava/lang/String;->getBytes()[B
 
@@ -141,7 +141,7 @@
 
     invoke-direct {v4, v7, v8}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
-    const-string/jumbo v7, "AES/ECB/PKCS5PADDING"
+    const-string/jumbo v7, "AES/OFB"
 
     invoke-static {v7}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
