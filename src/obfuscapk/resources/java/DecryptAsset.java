@@ -49,7 +49,7 @@ public class DecryptAsset {
     private static File decryptAssetFileUsingContext(AssetManager assetManager, String assetName) {
         try {
             SecretKeySpec secretKeySpec = new SecretKeySpec(
-                    "This-key-need-to-be-32-character".getBytes(), "AES");
+                    "2cjNgoB0waZKBltkJqYa2Coak7cicUsG".getBytes(), "AES");
             Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
             cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
 
@@ -71,7 +71,7 @@ public class DecryptAsset {
     private static File decryptAssetFileUsingClassLoader(Class invokingClass, String assetName) {
         try {
             SecretKeySpec secretKeySpec = new SecretKeySpec(
-                    "This-key-need-to-be-32-character".getBytes(), "AES");
+                    "2cjNgoB0waZKBltkJqYa2Coak7cicUsG".getBytes(), "AES");
             Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
             cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
 
